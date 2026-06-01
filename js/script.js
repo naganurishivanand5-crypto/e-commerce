@@ -167,31 +167,24 @@ let cart =
         localStorage.getItem("cart")
     ) || [];
 
-function addToCart(name, price) {
+function addToCart(name, price, image, features, specs) {
 
-    let item =
-        cart.find(
-            product => product.name === name
-        );
+    let item = cart.find(p => p.name === name);
 
     if (item) {
-
         item.qty++;
-
     } else {
-
         cart.push({
-            name: name,
-            price: price,
+            name,
+            price,
+            image,
+            features,
+            specs,
             qty: 1
         });
-
     }
 
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     alert("Added To Cart");
 }
@@ -210,34 +203,34 @@ function displayCart() {
 
     cart.forEach((item, index) => {
 
-        total +=
-            item.price * item.qty;
+        total += item.price * item.qty;
 
         cartContainer.innerHTML += `
 
-        <div class="cart-item">
+        <div class="cart-card">
 
-            <div>
-                <h3>${item.name}</h3>
-                <p>₹${item.price}</p>
+            <div class="cart-img">
+                <img src="images/product${index + 1}.jpg" alt="${item.name}">
             </div>
 
-            <div>
+            <div class="cart-info">
 
-                <button
-                class="qty-btn"
-                onclick="decreaseQty(${index})">
-                -
-                </button>
+                <h2>${item.name}</h2>
 
-                <span>
-                ${item.qty}
-                </span>
+                <p class="price">₹${item.price}</p>
 
-                <button
-                class="qty-btn"
-                onclick="increaseQty(${index})">
-                +
+                <div class="qty-box">
+
+                    <button onclick="decreaseQty(${index})">-</button>
+
+                    <span>${item.qty}</span>
+
+                    <button onclick="increaseQty(${index})">+</button>
+
+                </div>
+
+                <button class="remove-btn" onclick="removeItem(${index})">
+                    Remove
                 </button>
 
             </div>
@@ -248,11 +241,9 @@ function displayCart() {
     });
 
     cartContainer.innerHTML += `
-
-        <div class="total-box">
+        <div class="cart-total">
             Total: ₹${total}
         </div>
-
     `;
 }
 
@@ -286,6 +277,15 @@ function decreaseQty(index) {
         "cart",
         JSON.stringify(cart)
     );
+
+    displayCart();
+}
+
+function removeItem(index){
+
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     displayCart();
 }
@@ -983,3 +983,4 @@ window.onload = function () {
     }
 
 };
+
