@@ -1078,3 +1078,96 @@ margin:15px 0;
     background:#ff4d4d;
     color:white;
 }
+
+/* =========================
+   CART PAGE IMPROVED UI
+========================= */
+
+.cart-card{
+    display:flex;
+    gap:20px;
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.cart-img img{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.cart-info{
+    flex:1;
+}
+
+.cart-info h2{
+    margin:0;
+}
+
+.price{
+    color:#4f46e5;
+    font-weight:bold;
+    margin:5px 0;
+}
+
+.specs{
+    font-size:14px;
+    color:#444;
+    margin:8px 0;
+}
+
+.features{
+    padding-left:18px;
+    margin:10px 0;
+}
+
+.features li{
+    font-size:13px;
+    color:#555;
+}
+
+.qty-box{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin:10px 0;
+}
+
+.qty-box button{
+    padding:5px 10px;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.buy-btn{
+    background:green;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+.remove-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.cart-total{
+    font-size:22px;
+    font-weight:bold;
+    text-align:right;
+    margin-top:20px;
+}

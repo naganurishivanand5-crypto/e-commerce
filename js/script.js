@@ -186,9 +186,8 @@ function addToCart(name, price, image, features, specs) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert("Added To Cart");
+     alert("Added To Cart");
 }
-
 
 function displayCart() {
 
@@ -210,7 +209,7 @@ function displayCart() {
         <div class="cart-card">
 
             <div class="cart-img">
-                <img src="images/product${index + 1}.jpg" alt="${item.name}">
+                <img src="${item.image}" alt="${item.name}">
             </div>
 
             <div class="cart-info">
@@ -218,6 +217,14 @@ function displayCart() {
                 <h2>${item.name}</h2>
 
                 <p class="price">₹${item.price}</p>
+
+                <p class="specs">
+                    <b>Specs:</b> ${item.specs}
+                </p>
+
+                <ul class="features">
+                    ${item.features.map(f => `<li>${f}</li>`).join("")}
+                </ul>
 
                 <div class="qty-box">
 
@@ -228,6 +235,10 @@ function displayCart() {
                     <button onclick="increaseQty(${index})">+</button>
 
                 </div>
+
+                <button class="buy-btn" onclick="buyNow(${index})">
+                    Buy Now
+                </button>
 
                 <button class="remove-btn" onclick="removeItem(${index})">
                     Remove
@@ -984,3 +995,16 @@ window.onload = function () {
 
 };
 
+
+function buyNow(index){
+
+    const item = cart[index];
+
+    alert("Order Placed for " + item.name);
+
+    cart.splice(index, 1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    displayCart();
+}
