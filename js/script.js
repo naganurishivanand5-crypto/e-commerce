@@ -311,19 +311,31 @@ let wishlist =
         localStorage.getItem("wishlist")
     ) || [];
 
-function addToWishlist(name, price) {
+function addToWishlist(name, price, image, features, specs) {
 
-    wishlist.push({
-        name,
-        price
-    });
+    let wishlist =
+        JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    localStorage.setItem(
-        "wishlist",
-        JSON.stringify(wishlist)
-    );
+    let exists =
+        wishlist.find(p => p.name === name);
 
-    alert("Added To Wishlist");
+    if (!exists) {
+
+        wishlist.push({
+            name,
+            price,
+            image,
+            features,
+            specs
+        });
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+        alert("Added to Wishlist");
+
+    } else {
+        alert("Already in Wishlist");
+    }
 }
 
 
@@ -334,22 +346,68 @@ function displayWishlist() {
 
     if (!wishlistBox) return;
 
+    let wishlist =
+        JSON.parse(localStorage.getItem("wishlist")) || [];
+
     wishlistBox.innerHTML = "";
 
-    wishlist.forEach((item) => {
+    if (wishlist.length === 0) {
+        wishlistBox.innerHTML =
+        "<h3>No items in wishlist</h3>";
+        return;
+    }
+
+    wishlist.forEach((item, index) => {
 
         wishlistBox.innerHTML += `
 
-        <div class="card">
+        <div class="wish-card">
 
-            <h3>${item.name}</h3>
+            <img src="${item.image}" class="wish-img">
 
-            <p>₹${item.price}</p>
+            <div class="wish-info">
+
+                <h2>${item.name}</h2>
+
+                <p class="price">₹${item.price}</p>
+
+                <p class="specs">${item.specs}</p>
+
+                <ul>
+                    ${(item.features || []).map(f => `<li>${f}</li>`).join("")}
+                </ul>
+
+                <button class="cart-btn"
+                onclick="addToCart(
+                    '${item.name}',
+                    ${item.price},
+                    '${item.image}',
+                    ${JSON.stringify(item.features || [])},
+                    '${item.specs}'
+                )">
+                    Add To Cart
+                </button>
+
+                <button class="remove-btn"
+                onclick="removeWishlist(${index})">
+                    Remove
+                </button>
+
+            </div>
 
         </div>
 
         `;
     });
+}
+
+function removeWishlist(index){
+
+    wishlist.splice(index,1);
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    displayWishlist();
 }
 
 

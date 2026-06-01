@@ -1171,3 +1171,65 @@ margin:15px 0;
     text-align:right;
     margin-top:20px;
 }
+
+/* =========================
+   WISHLIST UI
+========================= */
+
+.wish-card{
+    display:flex;
+    gap:20px;
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.wish-img{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.wish-info{
+    flex:1;
+}
+
+.wish-info h2{
+    margin:0;
+}
+
+.price{
+    color:#4f46e5;
+    font-weight:bold;
+}
+
+.specs{
+    font-size:14px;
+    color:#555;
+}
+
+.wish-info ul{
+    padding-left:18px;
+}
+
+.cart-btn{
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    margin-right:10px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.remove-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
