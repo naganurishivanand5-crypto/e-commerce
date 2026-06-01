@@ -612,7 +612,7 @@ linear-gradient(
 
 .profile-card{
 width:100%;
-max-width:700px;
+max-width:550px;
 background:white;
 padding:40px;
 border-radius:20px;
@@ -775,4 +775,134 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 
 .profile-image-section input{
 margin-top:10px;
+}
+
+label{
+display:block;
+font-weight:600;
+margin-top:12px;
+margin-bottom:5px;
+color:#374151;
+}
+
+.dark label{
+color:white;
+}
+
+/* ==========================
+   COMPACT PROFILE FORM
+========================== */
+
+#profileForm{
+width:100%;
+margin-top:20px;
+}
+
+.profile-field{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
+}
+
+.profile-field label{
+width:120px;
+font-weight:600;
+color:#4f46e5;
+}
+
+.profile-field input{
+flex:1;
+padding:10px 15px;
+border:1px solid #d1d5db;
+border-radius:8px;
+outline:none;
+}
+
+.profile-btn{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+}
+
+.profile-btn:hover{
+background:#4338ca;
+}
+
+/* PRODUCT DETAILS */
+
+.product-details{
+display:flex;
+gap:50px;
+padding:50px;
+flex-wrap:wrap;
+}
+
+.product-image{
+flex:1;
+min-width:300px;
+}
+
+.product-image img{
+width:100%;
+max-width:500px;
+border-radius:15px;
+}
+
+.product-info{
+flex:1;
+min-width:300px;
+}
+
+.product-info h1{
+margin-bottom:15px;
+}
+
+.product-info h2{
+color:#4f46e5;
+margin-bottom:20px;
+}
+
+.product-info ul{
+padding-left:20px;
+margin-bottom:20px;
+}
+
+.product-info li{
+margin-bottom:8px;
+}
+
+.product-details{
+display:flex;
+gap:40px;
+padding:40px;
+flex-wrap:wrap;
+}
+
+.product-image{
+flex:1;
+min-width:300px;
+}
+
+.product-image img{
+width:100%;
+max-width:450px;
+border-radius:15px;
+}
+
+.product-info{
+flex:1;
+min-width:300px;
+}
+
+.product-info h2{
+color:#4f46e5;
+margin:15px 0;
 }
