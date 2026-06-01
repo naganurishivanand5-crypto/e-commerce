@@ -1,28 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Register</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <div class="register-container">
 
-<div class="left-image">
-<img src="images/product1.jpg">
+<div class="left-side">
+<img src="images/banner.jpg" alt="Register">
 </div>
+
+<div class="right-side">
 
 <div class="register-form">
 
 <h2>Create Account</h2>
 
-<input type="text" id="name" placeholder="Full Name">
+<input type="text" id="name">
 
-<input type="email" id="regEmail" placeholder="Email">
+<input type="email" id="regEmail">
 
-<input type="password" id="regPassword" placeholder="Password">
+<input type="password" id="regPassword">
 
-<button onclick="register()">Register</button>
+<input type="text" id="phone">
+
+<textarea id="address"></textarea>
+<button
+type="button"
+onclick="register()">
+Register
+</button>
+
+<p>
+Already Registered?
+<a href="login.html">Login</a>
+</p>
+
+</div>
 
 </div>
 

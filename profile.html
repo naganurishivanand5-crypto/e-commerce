@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="profile-page">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+            <div class="profile-image-section">
+
+<img
+id="profilePreview"
+src="images/default-user.png"
+alt="Profile">
+
+<input
+type="file"
+id="profileImage"
+accept="image/*"
+onchange="uploadProfileImage(event)">
+
+<div class="profile-header">
+
+    <div class="profile-image-section">
+
+        <img
+        id="profilePreview"
+        src="images/default-user.png"
+        alt="Profile Photo">
+
+        <br><br>
+
+        <input
+        type="file"
+        id="profileImage"
+        accept="image/*"
+        onchange="uploadProfileImage(event)">
+
+    </div>
+
+    <h2>My Profile</h2>
+
+    <p>Welcome Back</p>
+
+</div>
+
+        <form id="profileForm">
+
+<input
+type="text"
+id="profileName"
+placeholder="Full Name">
+
+<input
+type="email"
+id="profileEmail"
+placeholder="Email">
+
+<input
+type="text"
+id="profilePhone"
+placeholder="Phone Number">
+
+<textarea
+id="profileAddress"
+placeholder="Address"></textarea>
+
+<br><br>
+
+<button
+type="button"
+onclick="saveProfile()"
+class="profile-btn">
+
+Save Details
+
+</button>
+
+<hr>
+
+<h3>Change Password</h3>
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password">
+
+<button
+type="button"
+onclick="changePassword()"
+class="profile-btn">
+
+Update Password
+
+</button>
+<hr>
+
+<h3>My Orders</h3>
+
+<div id="orderHistory">
+
+No Orders Yet
+
+</div>
+
+</form>
+
+        <div class="profile-buttons">
+
+            <a href="index.html">
+                <button class="profile-btn">
+                    Continue Shopping
+                </button>
+            </a>
+
+            <button
+            onclick="logout()"
+            class="logout-btn">
+
+            Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

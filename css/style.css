@@ -1,21 +1,34 @@
+/* =========================
+   GLOBAL
+========================= */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#1e3c72,#2a5298);
-color:white;
+background:#f4f6f9;
+color:#333;
+transition:0.3s;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#111;
+padding:15px 40px;
+background:#111827;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
@@ -27,118 +40,739 @@ gap:10px;
 .logo img{
 width:50px;
 height:50px;
+border-radius:50%;
+}
+
+.logo h2{
+color:white;
 }
 
 nav{
 display:flex;
-gap:20px;
+gap:25px;
 }
 
 nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#06b6d4;
+}
+
+.right-header{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.right-header input{
+padding:10px 15px;
+border:none;
+border-radius:25px;
+width:250px;
+outline:none;
+}
+
+.login-btn{
+background:#4f46e5;
+padding:10px 20px;
 color:white;
 text-decoration:none;
-font-weight:bold;
+border-radius:8px;
 }
 
-.search-box input{
-padding:10px;
+#themeBtn{
+padding:10px 15px;
 border:none;
-border-radius:20px;
+border-radius:8px;
+cursor:pointer;
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
+height:500px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:50px;
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#06b6d4
+);
+color:white;
 }
 
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.shop-btn{
+padding:15px 30px;
+background:white;
+color:#4f46e5;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
 .products{
+padding:50px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:30px;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
-color:black;
-padding:15px;
 border-radius:15px;
-text-align:center;
+overflow:hidden;
+box-shadow:
+0 5px 15px rgba(0,0,0,.1);
 transition:.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px);
 }
 
 .card img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
 
-.card button{
+.card h3{
 padding:10px;
-background:#2196f3;
-color:white;
+}
+
+.card p{
+padding:0 10px 10px;
+font-weight:bold;
+color:#4f46e5;
+}
+
+.card button{
+margin:8px;
+padding:10px 15px;
 border:none;
-border-radius:10px;
 cursor:pointer;
+border-radius:8px;
+background:#4f46e5;
+color:white;
+}
+
+.card button:hover{
+background:#06b6d4;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.auth-container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#06b6d4
+);
 }
 
 .auth-box{
-width:400px;
-margin:100px auto;
 background:white;
-color:black;
-padding:30px;
+padding:40px;
+width:400px;
 border-radius:15px;
+box-shadow:
+0 10px 25px rgba(0,0,0,.2);
+}
+
+.auth-box h2{
+text-align:center;
+margin-bottom:20px;
 }
 
 .auth-box input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
 }
+
+.auth-box button{
+width:100%;
+padding:12px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.auth-box p{
+text-align:center;
+margin-top:15px;
+}
+
+/* =========================
+   REGISTER PAGE
+========================= */
 
 .register-container{
 display:flex;
 height:100vh;
 }
 
-.left-image{
+.left-side{
 width:50%;
 }
 
-.left-image img{
+.left-side img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-.register-form{
+.right-side{
 width:50%;
 display:flex;
-flex-direction:column;
 justify-content:center;
-padding:50px;
+align-items:center;
 background:white;
-color:black;
 }
 
-.register-form input{
+.register-form{
+width:400px;
+}
+
+.register-form h2{
+margin-bottom:20px;
+}
+
+.register-form input,
+.register-form textarea{
+width:100%;
 padding:12px;
 margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
 }
+
+.register-form button{
+width:100%;
+padding:12px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-container{
+padding:40px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:
+0 3px 10px rgba(0,0,0,.1);
+}
+
+.qty-btn{
+padding:8px 12px;
+border:none;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+.total-box{
+margin-top:30px;
+text-align:right;
+font-size:24px;
+font-weight:bold;
+}
+
+/* =========================
+   CHECKOUT
+========================= */
+
+.checkout{
+padding:50px;
+max-width:700px;
+margin:auto;
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.checkout button{
+padding:12px 25px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile{
+padding:50px;
+max-width:700px;
+margin:auto;
+}
+
+.profile-card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:
+0 5px 15px rgba(0,0,0,.1);
+}
+
+.profile-card h2{
+margin-bottom:15px;
+}
+
+/* =========================
+   ABOUT & CONTACT
+========================= */
+
+.page-section{
+padding:60px;
+max-width:1000px;
+margin:auto;
+}
+
+.page-section h1{
+margin-bottom:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.contact-form button{
+padding:12px 25px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-text-align:center;
-padding:20px;
-background:#111;
-margin-top:30px;
+background:#111827;
+color:white;
+padding:40px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
+footer h3,
+footer h4{
+margin-bottom:10px;
+}
+
+footer p{
+margin:5px 0;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
 .dark{
-background:#111;
+background:#111827;
 color:white;
+}
+
+.dark .card{
+background:#1f2937;
+color:white;
+}
+
+.dark .auth-box,
+.dark .register-form,
+.dark .profile-card,
+.dark .cart-item{
+background:#1f2937;
+color:white;
+}
+
+.dark input,
+.dark textarea,
+.dark select{
+background:#374151;
+color:white;
+border:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.register-container{
+flex-direction:column;
+}
+
+.left-side,
+.right-side{
+width:100%;
+height:auto;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.right-header input{
+width:180px;
+}
+}
+
+@media(max-width:600px){
+
+.products{
+padding:20px;
+}
+
+.hero{
+height:350px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.card img{
+height:180px;
+}
+}
+
+/* ==========================
+   ACCOUNT DROPDOWN
+========================== */
+
+.account-menu{
+position:relative;
+display:inline-block;
+}
+
+.account-btn{
+background:#4f46e5;
+color:white;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+right:0;
+top:45px;
+background:white;
+min-width:180px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+overflow:hidden;
+z-index:1000;
+}
+
+.dropdown-content a{
+display:block;
+padding:12px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.dropdown-content a:hover{
+background:#f1f5f9;
+}
+
+.account-menu:hover .dropdown-content{
+display:block;
+}
+
+.dark .dropdown-content{
+background:#1f2937;
+}
+
+.dark .dropdown-content a{
+color:white;
+}
+
+.dark .dropdown-content a:hover{
+background:#374151;
+}
+
+/* ==========================
+   PROFILE PAGE
+========================== */
+
+.profile-page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#06b6d4
+);
+}
+
+.profile-card{
+width:100%;
+max-width:700px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:
+0 15px 35px rgba(0,0,0,.2);
+text-align:center;
+}
+
+.profile-header{
+margin-bottom:30px;
+}
+
+.profile-avatar{
+width:120px;
+height:120px;
+margin:auto;
+border-radius:50%;
+background:#4f46e5;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:55px;
+color:white;
+margin-bottom:15px;
+}
+
+.profile-header h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.profile-header p{
+color:gray;
+}
+
+.profile-info{
+text-align:left;
+margin-top:20px;
+}
+
+.profile-row{
+display:flex;
+justify-content:space-between;
+padding:15px;
+border-bottom:1px solid #ddd;
+}
+
+.profile-label{
+font-weight:bold;
+color:#4f46e5;
+}
+
+.profile-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.profile-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#06b6d4;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+.logout-btn{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#ef4444;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+.profile-btn:hover,
+.logout-btn:hover{
+opacity:.9;
+}
+
+.dark .profile-card{
+background:#1f2937;
+color:white;
+}
+
+.dark .profile-row{
+border-color:#374151;
+}
+
+.dark .profile-label{
+color:#06b6d4;
+}
+
+/* ==========================
+   PROFILE FORM
+========================== */
+
+#profileForm{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+#profileForm input,
+#profileForm textarea{
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+width:100%;
+}
+
+#profileForm textarea{
+height:120px;
+resize:none;
+}
+
+/* PROFILE IMAGE */
+
+.profile-image-section{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile-image-section img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #4f46e5;
+}
+
+.profile-image-section input{
+margin-top:10px;
+}
+
+/* ==========================
+   PROFILE PHOTO
+========================== */
+
+.profile-image-section{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile-image-section img{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #4f46e5;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.profile-image-section input{
+margin-top:10px;
 }
